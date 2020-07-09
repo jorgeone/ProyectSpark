@@ -1,0 +1,18 @@
+#include "DigiKeyboard.h"
+
+// the setup routine runs once when you press reset:
+void setup() {                
+  delay(1000); 
+  DigiKeyboard.update(); 
+  delay(100); 
+  DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT); 
+  delay(1000); 
+  DigiKeyboard.println("cmd"); 
+  delay(1000); 
+  DigiKeyboard.println("echo Que hay de nuevo viejo >( }}}"); 
+}
+
+// the loop routine runs over and over again forever:
+void loop() { 
+
+}
