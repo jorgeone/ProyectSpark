@@ -1,0 +1,19 @@
+#include "DigiKeyboard.h"
+
+// the setup routine runs once when you press reset:
+void setup() {                
+  // initialize the digital pin as an output.
+  pinMode(1, OUTPUT);
+  digitalWrite(1, LOW);
+}
+
+// the loop routine runs over and over again forever:
+void loop() { 
+  for (int i = 0; i < 3; i++) {
+    digitalWrite(1, HIGH);
+    delay(500);
+    digitalWrite(1, LOW);
+    delay(500);
+  }
+  delay(5000); 
+}
